@@ -1,0 +1,13 @@
+// 1. version inicial
+    // estructura (carpetas/archivos)
+    // front básico (una pantalla que llame al back)
+    // back básico (un endpoint)
+    // deploy a heroku
+
+// 2. versión avanzada
+    // funciona
+
+// 3. ajustes
+    // sacar código de más
+    // mejorar lectura de código
+    // chequeo paso a paso
