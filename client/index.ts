@@ -4,5 +4,4 @@ import "./router";
 (function main(){
     Router.go("/");
     console.log("Index.ts")
-    
 })();

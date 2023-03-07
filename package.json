@@ -3,7 +3,7 @@
         "dev:fullstack": "'dev:front' && 'dev:api'",
         "dev:front": "parcel serve ./client/index.html",
         "dev:api": "nodemon --watch './server/index.ts' --exec 'ts-node ./server/index.ts",
-        "build:fullstack": "'build:front' && 'build:api'",
+        "build:fullstack": "'yarn build:front' && 'yarn build:api'",
         "build:front": "parcel build ./client/index.html",
         "build:api": "tsc ./server/index.ts ./server/index.js",
         "build": "yarn build:front && yarn build:api"
