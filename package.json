@@ -1,16 +1,20 @@
 {
     "scripts": {
+        "dev:fullstack": "'dev:front' && 'dev:api'",
         "dev:front": "parcel serve ./client/index.html",
         "dev:api": "nodemon --watch './server/index.ts' --exec 'ts-node ./server/index.ts",
+        "build:fullstack": "'build:front' && 'build:api'",
         "build:front": "parcel build ./client/index.html",
         "build:api": "tsc ./server/index.ts ./server/index.js",
         "build": "yarn build:front && yarn build:api"
     },
     "dependencies": {
         "@vaadin/router": "^1.7.4",
+        "cors": "^2.8.5",
         "express": "^4.18.2",
         "firebase": "^9.17.1",
         "firebase-admin": "^11.5.0",
-        "parcel": "^2.8.3"
+        "parcel": "^2.8.3",
+        "uuid": "^9.0.0"
     }
 }

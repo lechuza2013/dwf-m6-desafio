@@ -97,7 +97,7 @@ customElements.define("form-el", class Button extends HTMLElement{
             this.shadow.innerHTML = `
             <form class="form">
                     <h2 class="h2">Tu Nombre</h2>
-                    <input type="text" class="input" name="name"></input>
+                    <input type="text" class="input" name="name" required>
                     <button class="button">Empezar</button>
             </form>
         `;
