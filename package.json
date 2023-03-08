@@ -4,7 +4,7 @@
         "dev:client": "parcel serve ./client/index.html",
         "dev:server": "nodemon --watch './server/index.ts' --exec 'ts-node ./server/index.ts",
         "build:client": "parcel build ./client/index.html",
-        "build:server": "tsc",
+        "build:server": "tsc ./server/index.ts",
         "build": "yarn build:client && yarn build:server"
     },
     "dependencies": {
