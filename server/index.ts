@@ -25,3 +25,7 @@ app.get("/rooms", async (req, res)=>{
    });
    // PROBAR SI LA API EN EL DEPLOY 
 });
+
+app.listen(PORT, ()=>{
+   console.log("API Running");
+});
