@@ -18,12 +18,15 @@ const userCollection = firestore.collection("users");
 const roomCollection = firestore.collection("rooms");
 
 app.get("/rooms", async (req, res)=>{
-   roomCollection.get().then((roomSnap)=>{
-      const roomCollectionSnap = roomSnap;
-      console.log("RoomSnap: ", roomCollectionSnap);
-      res.json(roomCollectionSnap);
-   });
+   res.json({"noob": "vos"});
+   console.log("noob");
+   // roomCollection.get().then((roomSnap)=>{
+   //    const roomCollectionSnap = roomSnap;
+   //    console.log("RoomSnap: ", roomCollectionSnap);
+   //    res.json(roomCollectionSnap);
+   // });
    // PROBAR SI LA API EN EL DEPLOY 
+   // PROBAR CON POSTMAN
 });
 
 app.listen(PORT, ()=>{
