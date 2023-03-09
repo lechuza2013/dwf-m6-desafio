@@ -32,6 +32,12 @@ app.get("/rooms", async (req, res)=>{
    // PROBAR CON POSTMAN
 });
 
+app.get("/env", async (req, res)=>{
+   res.json({
+      enviroment: process.env.NODE_ENV,
+   });
+});
+
 app.listen(PORT, ()=>{
    console.log("API Running");
 });
