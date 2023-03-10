@@ -1,4 +1,4 @@
-21995
+21996
 93E:\Estudio 2023\desafioFinalMod6\node_modules\@swc\helpers\lib\_object_destructuring_empty.js133178503668830000 0
 62E:\Estudio 2023\desafioFinalMod6\node_modules\svgo\lib\svgo.js133178503653900000 0
 83E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\functions\dist\esm\functions133222585820157622 1
@@ -7,7 +7,7 @@
 78E:\Estudio 2023\desafioFinalMod6\node_modules\underscore\underscore-node-f.cjs133222586545500000 0
 59E:\Estudio 2023\desafioFinalMod6\node_modules\requizzle\lib133222586678477952 1
 99E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\auth\react-native\dist\esm\auth\react-native133222585887243661 1
-45E:\Estudio 2023\desafioFinalMod6\package.json133223468310814659 0
+45E:\Estudio 2023\desafioFinalMod6\package.json133228649466806068 0
 74E:\Estudio 2023\desafioFinalMod6\node_modules\webidl-conversions\README.md133222585368820000 0
 60E:\Estudio 2023\desafioFinalMod6\node_modules\cors\README.md133223468203890000 0
 93E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\compat\database\dist\esm\remote-config133222585871203665 1
@@ -101,7 +101,7 @@
 72E:\Estudio 2023\desafioFinalMod6\node_modules\uuid\dist\commonjs-browser133222586704499829 1
 110E:\Estudio 2023\desafioFinalMod6\node_modules\@google-cloud\firestore\types\protos\firestore_v1_proto_api.d.ts133222586440260000 0
 60E:\Estudio 2023\desafioFinalMod6\node_modules\unpipe\LICENSE133183683813560000 0
-37E:\Estudio 2023\desafioFinalMod6\dist133223470197914858 1
+37E:\Estudio 2023\desafioFinalMod6\dist133228649675037073 1
 95E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\analytics\dist\compat\app\index.cdn.d.ts133222585413090000 0
 88E:\Estudio 2023\desafioFinalMod6\node_modules\jsdoc\plugins\test\specs\commentConvert.js133222586528940000 0
 54E:\Estudio 2023\desafioFinalMod6\node_modules\escalade133222585644018132 1
@@ -216,6 +216,24 @@
 90E:\Estudio 2023\desafioFinalMod6\node_modules\markdown-it\lib\rules_inline\state_inline.js133222586539080000 0
 119E:\Estudio 2023\desafioFinalMod6\node_modules\@firebase\auth\dist\esm2017\src\platform_browser\recaptcha\recaptcha.d.ts133222585255310000 0
 50E:\Estudio 2023\desafioFinalMod6\node_modules\.bin133223468309504654 1
+118E:\Estudio 2023\desafioFinalMod6\node_modules\@firebase\firestore\dist\lite\firestore\test\unit\model\values.test.d.ts133222585259670000 0
+76E:\Estudio 2023\desafioFinalMod6\node_modules\underscore\modules\isString.js133222586545500000 0
+67E:\Estudio 2023\desafioFinalMod6\node_modules\htmlnano\package.json133178503650990000 0
+64E:\Estudio 2023\desafioFinalMod6\node_modules\lodash\_WeakMap.js133222586452440000 0
+69E:\Estudio 2023\desafioFinalMod6\node_modules\@protobufjs\fetch\tests133222585695850706 1
+91E:\Estudio 2023\desafioFinalMod6\node_modules\caniuse-lite\data\features\referrer-policy.js133222585199570000 0
+71E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\performance\dist133222585772957595 1
+55E:\Estudio 2023\desafioFinalMod6\node_modules\type-fest133222585670678472 1
+89E:\Estudio 2023\desafioFinalMod6\node_modules\body-parser\node_modules\debug\src\debug.js133183683800400000 0
+104E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\compat\firestore\dist\compat\analytics\index.d.ts133222585413090000 0
+61E:\Estudio 2023\desafioFinalMod6\node_modules\tr46\.npmignore133222585366930000 0
+81E:\Estudio 2023\desafioFinalMod6\node_modules\markdown-it\lib\rules_block\code.js133222586539080000 0
+104E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\messaging\sw\dist\esm\compat\analytics\index.d.ts133222585413090000 0
+65E:\Estudio 2023\desafioFinalMod6\node_modules\weak-lru-cache\dist133222585737177632 1
+100E:\Estudio 2023\desafioFinalMod6\node_modules\@firebase\database-compat\dist\index.standalone.js.map133222585248220000 0
+77E:\Estudio 2023\desafioFinalMod6\node_modules\underscore\modules\functions.js133222586545500000 0
+97E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\auth\cordova\dist\remote-config\index.d.ts133222585413090000 0
+46E:\Estudio 2023\desafioFinalMod6\tsconfig.json133227746450638729 0
 77E:\Estudio 2023\desafioFinalMod6\node_modules\caniuse-lite\data\regions\TL.js133222585199570000 0
 76E:\Estudio 2023\desafioFinalMod6\node_modules\jsdoc\node_modules\.bin\mkdirp133223468304484665 0
 58E:\Estudio 2023\desafioFinalMod6\node_modules\once\once.js133222586511910000 0
@@ -253,7 +271,7 @@
 62E:\Estudio 2023\desafioFinalMod6\node_modules\posthtml\license133178503674220000 0
 87E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\firestore\lite\dist\auth\cordova133222585874153651 1
 105E:\Estudio 2023\desafioFinalMod6\node_modules\@firebase\firestore\dist\firestore\src\api\credentials.d.ts133222585259670000 0
-48E:\Estudio 2023\desafioFinalMod6\server\index.ts133223475011439182 0
+48E:\Estudio 2023\desafioFinalMod6\server\index.ts133228650369559602 0
 107E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\compat\remote-config\dist\esm\compat\index.node.d.ts133222585413090000 0
 89E:\Estudio 2023\desafioFinalMod6\node_modules\protobufjs-cli\node_modules\semver\index.js133222586460120000 0
 72E:\Estudio 2023\desafioFinalMod6\node_modules\yargs\build\lib\argsert.js133222585363460000 0
@@ -2080,16 +2098,6 @@
 80E:\Estudio 2023\desafioFinalMod6\node_modules\cosmiconfig\dist\readFile.d.ts.map133178503688880000 0
 80E:\Estudio 2023\desafioFinalMod6\node_modules\@types\markdown-it\lib\rules_block133222586688948869 1
 95E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\compat\installations\dist\app\index.d.ts133222585413090000 0
-118E:\Estudio 2023\desafioFinalMod6\node_modules\@firebase\firestore\dist\lite\firestore\test\unit\model\values.test.d.ts133222585259670000 0
-76E:\Estudio 2023\desafioFinalMod6\node_modules\underscore\modules\isString.js133222586545500000 0
-67E:\Estudio 2023\desafioFinalMod6\node_modules\htmlnano\package.json133178503650990000 0
-64E:\Estudio 2023\desafioFinalMod6\node_modules\lodash\_WeakMap.js133222586452440000 0
-69E:\Estudio 2023\desafioFinalMod6\node_modules\@protobufjs\fetch\tests133222585695850706 1
-91E:\Estudio 2023\desafioFinalMod6\node_modules\caniuse-lite\data\features\referrer-policy.js133222585199570000 0
-71E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\performance\dist133222585772957595 1
-55E:\Estudio 2023\desafioFinalMod6\node_modules\type-fest133222585670678472 1
-89E:\Estudio 2023\desafioFinalMod6\node_modules\body-parser\node_modules\debug\src\debug.js133183683800400000 0
-104E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\compat\firestore\dist\compat\analytics\index.d.ts133222585413090000 0
 67E:\Estudio 2023\desafioFinalMod6\node_modules\node-forge\lib\pss.js133222586439620000 0
 101E:\Estudio 2023\desafioFinalMod6\node_modules\@firebase\storage\dist\src\implementation\location.d.ts133222585303360000 0
 54E:\Estudio 2023\desafioFinalMod6\node_modules\uc.micro133222586666816439 1
@@ -3108,12 +3116,6 @@
 71E:\Estudio 2023\desafioFinalMod6\node_modules\underscore\amd\initial.js133222586545500000 0
 77E:\Estudio 2023\desafioFinalMod6\node_modules\webidl-conversions\lib\index.js133222585368820000 0
 63E:\Estudio 2023\desafioFinalMod6\node_modules\cors\lib\index.js133223468203890000 0
-61E:\Estudio 2023\desafioFinalMod6\node_modules\tr46\.npmignore133222585366930000 0
-81E:\Estudio 2023\desafioFinalMod6\node_modules\markdown-it\lib\rules_block\code.js133222586539080000 0
-104E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\messaging\sw\dist\esm\compat\analytics\index.d.ts133222585413090000 0
-65E:\Estudio 2023\desafioFinalMod6\node_modules\weak-lru-cache\dist133222585737177632 1
-100E:\Estudio 2023\desafioFinalMod6\node_modules\@firebase\database-compat\dist\index.standalone.js.map133222585248220000 0
-77E:\Estudio 2023\desafioFinalMod6\node_modules\underscore\modules\functions.js133222586545500000 0
 99E:\Estudio 2023\desafioFinalMod6\node_modules\@parcel\transformer-postcss\lib\PostCSSTransformer.js133191453681440000 0
 71E:\Estudio 2023\desafioFinalMod6\node_modules\weak-lru-cache\index.d.ts133178503774340000 0
 61E:\Estudio 2023\desafioFinalMod6\node_modules\lodash\times.js133222586452440000 0
@@ -4083,7 +4085,7 @@
 68E:\Estudio 2023\desafioFinalMod6\node_modules\underscore\cjs\noop.js133222586545500000 0
 75E:\Estudio 2023\desafioFinalMod6\node_modules\underscore\amd\isArguments.js133222586545500000 0
 77E:\Estudio 2023\desafioFinalMod6\node_modules\caniuse-lite\data\regions\CG.js133222585199570000 0
-59E:\Estudio 2023\desafioFinalMod6\dist\index.80efa6db.js.map133223470194854855 0
+59E:\Estudio 2023\desafioFinalMod6\dist\index.80efa6db.js.map133228649674927084 0
 90E:\Estudio 2023\desafioFinalMod6\node_modules\@firebase\auth\dist\esm5\src\core\strategies133222585837897620 1
 97E:\Estudio 2023\desafioFinalMod6\node_modules\google-gax\build\protos\google\type\dayofweek.proto133222586474400000 0
 89E:\Estudio 2023\desafioFinalMod6\node_modules\jsonwebtoken\node_modules\semver\preload.js133222586460120000 0
@@ -7023,7 +7025,7 @@
 67E:\Estudio 2023\desafioFinalMod6\node_modules\minimist\package.json133222586524820000 0
 71E:\Estudio 2023\desafioFinalMod6\node_modules\minimist\test\all_bool.js133222586524820000 0
 136E:\Estudio 2023\desafioFinalMod6\node_modules\google-gax\node_modules\@grpc\grpc-js\build\src\generated\grpc\channelz\v1\ServerData.d.ts133222586501310000 0
-55E:\Estudio 2023\desafioFinalMod6\dist\index.80efa6db.js133223470194404904 0
+55E:\Estudio 2023\desafioFinalMod6\dist\index.80efa6db.js133228649674737092 0
 67E:\Estudio 2023\desafioFinalMod6\node_modules\minimist\test\bool.js133222586524820000 0
 77E:\Estudio 2023\desafioFinalMod6\node_modules\caniuse-lite\data\regions\DJ.js133222585199570000 0
 101E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\messaging\dist\esm\compat\messaging\index.d.ts133222585413090000 0
@@ -7259,7 +7261,6 @@
 65E:\Estudio 2023\desafioFinalMod6\node_modules\markdown-it\LICENSE133222586539080000 0
 70E:\Estudio 2023\desafioFinalMod6\node_modules\markdown-it\package.json133222586539080000 0
 73E:\Estudio 2023\desafioFinalMod6\node_modules\@parcel\bundler-default\src133222585675558482 1
-105E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\compat\remote-config\dist\esm\app-check\index.d.ts133222585413090000 0
 68E:\Estudio 2023\desafioFinalMod6\node_modules\lodash\fp\startCase.js133222586452440000 0
 79E:\Estudio 2023\desafioFinalMod6\node_modules\markdown-it\node_modules\entities133222586665996439 1
 128E:\Estudio 2023\desafioFinalMod6\node_modules\google-gax\node_modules\@grpc\grpc-js\src\generated\grpc\channelz\v1\SocketData.ts133222586501310000 0
@@ -12927,6 +12928,7 @@
 89E:\Estudio 2023\desafioFinalMod6\node_modules\escodegen\node_modules\estraverse\README.md133222586528790000 0
 124E:\Estudio 2023\desafioFinalMod6\node_modules\@firebase\firestore\dist\lite\packages\firestore\src\model\mutation_batch.d.ts133222585259670000 0
 108E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\compat\remote-config\dist\esm\auth\cordova\index.d.ts133222585413090000 0
+105E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\compat\remote-config\dist\esm\app-check\index.d.ts133222585413090000 0
 103E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\compat\remote-config\dist\esm\app\index.cdn.d.ts133222585413090000 0
 63E:\Estudio 2023\desafioFinalMod6\node_modules\debug\src\node.js133222586440440000 0
 97E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\compat\remote-config\dist\compat\analytics133222585876413654 1
@@ -14685,7 +14687,6 @@
 80E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\auth\cordova\dist\storage133222585814907612 1
 122E:\Estudio 2023\desafioFinalMod6\node_modules\@firebase\auth\dist\node-esm\src\platform_browser\messagechannel\sender.d.ts133222585255310000 0
 91E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\auth\cordova\dist\storage\index.d.ts133222585413090000 0
-97E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\auth\cordova\dist\remote-config\index.d.ts133222585413090000 0
 95E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\auth\cordova\dist\performance\index.d.ts133222585413090000 0
 85E:\Estudio 2023\desafioFinalMod6\node_modules\firebase\auth\cordova\dist\messaging\sw133222585868923661 1
 64E:\Estudio 2023\desafioFinalMod6\node_modules\debug\package.json133222586440440000 0
@@ -21978,12 +21979,12 @@
 57E:\Estudio 2023\desafioFinalMod6\node_modules\.bin\rimraf133223468309034631 0
 57E:\Estudio 2023\desafioFinalMod6\node_modules\.bin\semver133223468308184633 0
 55E:\Estudio 2023\desafioFinalMod6\node_modules\.bin\svgo133223468309134674 0
-56E:\Estudio 2023\desafioFinalMod6\dist\fondo.7cb08934.png133223470194114891 0
-56E:\Estudio 2023\desafioFinalMod6\dist\index.c7ba7faf.css133223470194254869 0
-60E:\Estudio 2023\desafioFinalMod6\dist\index.c7ba7faf.css.map133223470194624897 0
-48E:\Estudio 2023\desafioFinalMod6\dist\index.html133223470197874889 0
+56E:\Estudio 2023\desafioFinalMod6\dist\fondo.7cb08934.png133228649673977091 0
+56E:\Estudio 2023\desafioFinalMod6\dist\index.c7ba7faf.css133228649673087071 0
+60E:\Estudio 2023\desafioFinalMod6\dist\index.c7ba7faf.css.map133228649673277094 0
+48E:\Estudio 2023\desafioFinalMod6\dist\index.html133228649672087104 0
 49E:\Estudio 2023\desafioFinalMod6\client\index.css133211180745504649 0
-48E:\Estudio 2023\desafioFinalMod6\client\index.ts133223418547217917 0
+48E:\Estudio 2023\desafioFinalMod6\client\index.ts133226863586691796 0
 48E:\Estudio 2023\desafioFinalMod6\client\state.ts133222599299612834 0
 53E:\Estudio 2023\desafioFinalMod6\client\pages\home.ts133222403062676310 0
 53E:\Estudio 2023\desafioFinalMod6\client\pages\name.ts133221702854376334 0
