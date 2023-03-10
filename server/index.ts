@@ -2,7 +2,6 @@
 import {rtdb, firestore} from "./db";
 import {ref, set, push} from "firebase/database";
 import * as express from "express";
-const path = require("path");
 
 // CORS, UUID.
 import {v4 as uuidv4} from "uuid";
@@ -15,7 +14,6 @@ console.log(PORT);
 
 app.use(express.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, "../dist")));
 
 const userCollection = firestore.collection("users");
 const roomCollection = firestore.collection("rooms");
