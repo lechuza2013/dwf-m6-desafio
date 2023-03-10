@@ -1,3 +1,4 @@
+import "../server/index";
 import {Router} from "@vaadin/router"
 import "./router";
 
