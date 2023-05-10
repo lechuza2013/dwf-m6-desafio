@@ -15,8 +15,7 @@ router.setRoutes([
   { path: "/signin", component: "signin-comp" },
   { path: "/signup", component: "signup-comp" },
   //Después de iniciar sesión
-  { path: "//menu", component: "menu-comp" },
-  // { path: "/menu", component: "play-comp" },
+  { path: "/menu", component: "menu-comp" },
   { path: "/joingame", component: "joingame-comp" },
   { path: "/newgame", component: "newgame-comp" },
   { path: "/play", component: "play-comp" },
