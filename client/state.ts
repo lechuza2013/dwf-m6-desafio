@@ -6,7 +6,7 @@ interactuar con localStorage/API
 import { Router } from "@vaadin/router";
 import { database, onValue, ref, update, off } from "./db";
 
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = process.env.PORT || "http://localhost:5000";
 type Jugada = "piedra" | "papel" | "tijeras";
 
 export const state = {
