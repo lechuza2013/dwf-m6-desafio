@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+html, body { 
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+body{
+    box-sizing: border-box; 
+    background-image: url("./components/images/fondo.png");
+    /* height: 100vh;
+    width: 100vw; */
+}
+.root{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

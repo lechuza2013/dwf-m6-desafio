@@ -1,0 +1,32 @@
+{
+  "scripts": {
+    "dev:client": "parcel serve ./client/index.html",
+    "build:client": "parcel build ./client/index.html",
+    "deploy": "gh-pages -d dist",
+    "build-and-deploy": "yarn build:client && yarn deploy"
+  },
+  "dependencies": {
+    "@types/node": "^18.15.0",
+    "@vaadin/router": "^1.7.4",
+    "firebase": "^9.20.0-canary.f5aec7bd8",
+    "gh-pages": "^5.0.0",
+    "parcel": "^2.8.3"
+  },
+  "name": "desafiofinalmod6",
+  "version": "1.0.0",
+  "devDependencies": {
+    "process": "^0.11.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lechuza2013/dwf-m6-desafio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lechuza2013/dwf-m6-desafio/issues"
+  },
+  "homepage": "https://github.com/lechuza2013/dwf-m6-desafio#readme",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
