@@ -10,7 +10,8 @@
     "@vaadin/router": "^1.7.4",
     "firebase": "^9.20.0-canary.f5aec7bd8",
     "gh-pages": "^5.0.0",
-    "parcel": "^2.8.3"
+    "parcel": "^2.8.3",
+    "cors": "^2.8.5"
   },
   "name": "desafiofinalmod6",
   "version": "1.0.0",
