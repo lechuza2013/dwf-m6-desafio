@@ -179,6 +179,7 @@ export const state = {
         ) {
           window.alert(data.message);
           this.connectToGameroom(dataRecieved.longRoomId);
+          Router.go("/play");
         } else if (
           data.message ===
           "Sala llena, o tu nombre no coincide con los participantes"
@@ -221,10 +222,7 @@ export const state = {
         data.currentGame[Object.keys(data.currentGame)[0]].online == true &&
         data.currentGame[Object.keys(data.currentGame)[1]].online == true
       ) {
-        if (
-          window.location.href == FRONT_URL + "/joingame" ||
-          window.location.href == FRONT_URL + "/newgame"
-        ) {
+        if (window.location.href == FRONT_URL + "/newgame") {
           Router.go("/play");
         }
       } else {
