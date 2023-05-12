@@ -7,8 +7,8 @@ import { Router } from "@vaadin/router";
 import { database, onValue, ref, update, off } from "./db";
 
 const API_BASE_URL = process.env.PORT || "https://dwf-m6-back.onrender.com";
-const FRONT_URL =
-  "http://localhost:1234" || "https://piedrapapelotijerazo.onrender.com";
+const FRONT_URL = "https://piedrapapelotijerazo.onrender.com";
+// const FRONT_URL = "http://localhost:1234";
 type Jugada = "piedra" | "papel" | "tijeras";
 
 export const state = {
