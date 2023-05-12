@@ -117,8 +117,13 @@ customElements.define(
       gap: 15px;
       transform: translate(-50%, -50%);
   }
+   .final__results > img{
+    width: 88vw;
+    height: 44vh;
+   }
   .button{
-    width: 100%;
+    min-width: 180px;
+    width: 50vw;
     align-self: center;
     background: #006CFC;
     border: 10px solid #001997;

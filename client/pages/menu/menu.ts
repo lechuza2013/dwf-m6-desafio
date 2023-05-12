@@ -77,10 +77,6 @@ customElements.define(
        .consult-room{
         margin-top: 50px;
        }
-       .consult-room:hover{
-        transform: scale(1.05);
-       }
-      
        `;
       this.shadow.innerHTML = `
       <maintitle-el>Piedra Papel o Tijera</maintitle-el>

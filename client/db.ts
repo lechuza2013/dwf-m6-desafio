@@ -2,11 +2,10 @@ import { initializeApp } from "firebase/app";
 import { getDatabase, onValue, ref, update, off } from "firebase/database";
 
 const app = initializeApp({
-  apiKey: "cb88244f2f43257f221a2df98ca180852bf1c58f",
-  authDomain: "probandoapx.firebaseapp.com",
-  databaseURL: "https://probandoapx-default-rtdb.firebaseio.com/",
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.FIREBASE_DB_URL,
 });
-
 const database = getDatabase(app);
 
 export { database, onValue, ref, update, off };

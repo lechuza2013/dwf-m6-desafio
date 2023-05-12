@@ -6,7 +6,9 @@ interactuar con localStorage/API
 import { Router } from "@vaadin/router";
 import { database, onValue, ref, update, off } from "./db";
 
-const API_BASE_URL = process.env.PORT || "http://localhost:5000";
+const API_BASE_URL = process.env.PORT || "https://dwf-m6-back.onrender.com";
+const FRONT_URL =
+  "http://localhost:1234" || "https://piedrapapelotijerazo.onrender.com";
 type Jugada = "piedra" | "papel" | "tijeras";
 
 export const state = {
@@ -220,8 +222,8 @@ export const state = {
         data.currentGame[Object.keys(data.currentGame)[1]].online == true
       ) {
         if (
-          window.location.href ==
-          "https://piedrapapelotijerazo.onrender.com/joingame"
+          window.location.href == FRONT_URL + "/joingame" ||
+          window.location.href == FRONT_URL + "/newgame"
         ) {
           Router.go("/play");
         }
@@ -232,10 +234,7 @@ export const state = {
         data.currentGame[Object.keys(data.currentGame)[0]].start == true &&
         data.currentGame[Object.keys(data.currentGame)[1]].start == true
       ) {
-        if (
-          window.location.href ==
-          "https://piedrapapelotijerazo.onrender.com/play"
-        ) {
+        if (window.location.href == FRONT_URL + "/play") {
           Router.go("/duel");
         }
 
