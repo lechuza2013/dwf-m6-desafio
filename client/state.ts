@@ -223,8 +223,9 @@ export const state = {
         data.currentGame[Object.keys(data.currentGame)[1]].online == true
       ) {
         if (window.location.href == FRONT_URL + "/newgame") {
-          this.data.currentGame = data.currentGame;
-          Router.go("/play");
+          (this.data.currentGame = data.currentGame).then(() => {
+            Router.go("/play");
+          });
         }
       } else {
         window.alert("Esperando a que el contrincante se conecte");
@@ -234,8 +235,9 @@ export const state = {
         data.currentGame[Object.keys(data.currentGame)[1]].start == true
       ) {
         if (window.location.href == FRONT_URL + "/play") {
-          this.data.currentGame = data.currentGame;
-          Router.go("/duel");
+          (this.data.currentGame = data.currentGame).then(() => {
+            Router.go("/duel");
+          });
         }
 
         // state.restartRound();
