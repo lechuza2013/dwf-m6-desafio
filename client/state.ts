@@ -214,8 +214,8 @@ export const state = {
     const roomRef = ref(database, "/rooms/" + roomLongId);
     onValue(roomRef, (snap) => {
       const data = snap.val();
-      // off(roomRef);
-      // console.log(data);
+
+      console.log(data);
       this.data.currentGame = data.currentGame;
       //Si ambos estan online (Ingresaron a la sala)
       if (

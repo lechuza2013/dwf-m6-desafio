@@ -18,7 +18,7 @@ customElements.define(
         e.preventDefault();
         const formData = new FormData(e.target as HTMLFormElement);
         const objeto = Object.fromEntries(formData.entries());
-        console.log("Pinga ingresada: ", objeto);
+        console.log("Datos ingresados: ", objeto);
         state.signup(objeto);
       });
     }
