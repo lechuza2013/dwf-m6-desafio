@@ -1,3 +1,4 @@
+import { Router } from "@vaadin/router";
 import { state } from "../../../state";
 
 //COMPONENTS IMPORTAODS
@@ -94,8 +95,7 @@ customElements.define(
        `;
       this.shadow.innerHTML = `
        <div class="main-container">
-           <subtitle-el>Presioná jugar y elegí: piedra, papel o tijera antes de que pasen los 3 segundos.</subtitle-el>
-           <div class="play-menu">
+            <div class="play-menu">
                 <div class="container-participants">
                         <h2 class="h2 fplayer">${
                           cg[Object.keys(cg)[0]].name
@@ -113,7 +113,8 @@ customElements.define(
                 </div>
 
                 </div>
-                <button class="button">¡Jugar!</button>
+                <button class="button startPlaying">¡Jugar!</button>
+                <button class="button goBack">Volver</button>
 
        </div>
            `;
@@ -128,12 +129,17 @@ customElements.define(
       //   firstPlayerEl.appendChild(checkMark);
       // }
       this.shadow.appendChild(style);
-      const playButtonEl = this.shadow.querySelector(".button") as HTMLElement;
+      const playButtonEl = this.shadow.querySelector(
+        ".startPlaying"
+      ) as HTMLElement;
       playButtonEl.addEventListener("click", (e) => {
         playButtonEl.style.color = "#32dd32";
         playButtonEl.textContent = "Esperando";
-        // state.restartRound();
         state.checkPlayersReady(state.data.userData.longRoomId);
+      });
+      const goBackButtonEl = this.shadow.querySelector(".goBack");
+      goBackButtonEl.addEventListener("click", (e) => {
+        Router.go("/joingame");
       });
     }
   }

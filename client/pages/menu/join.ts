@@ -1,6 +1,7 @@
 import { state } from "../../state";
 
 import "../../components/main-title";
+import { Router } from "@vaadin/router";
 
 customElements.define(
   "joingame-comp",
@@ -109,8 +110,13 @@ customElements.define(
             <input class="inputs input-roomid" type="" name="inputRoomID" minlength="4" maxlength="4" required/>
             <button class="button">Entrar</button>
       </form>
+      <button class="button goBack">Volver</button>
       `;
       this.shadow.appendChild(style);
+      const goBackButtonEl = this.shadow.querySelector(".goBack");
+      goBackButtonEl.addEventListener("click", (e) => {
+        Router.go("/joingame");
+      });
     }
   }
 );
