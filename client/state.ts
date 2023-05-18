@@ -212,7 +212,7 @@ export const state = {
   },
   async connectToGameroom(roomLongId) {
     const roomRef = ref(database, "/rooms/" + roomLongId);
-    onValue(roomRef, (snap) => {
+    await onValue(roomRef, (snap) => {
       const data = snap.val();
 
       console.log(data);
