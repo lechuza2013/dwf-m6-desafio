@@ -30,7 +30,10 @@ export const state = {
     const localDataParseado = JSON.parse(localData);
     if (localDataParseado.userId != "") {
       this.setState(localDataParseado);
-      Router.go("/menu");
+      this.signIn({
+        inputEmail: this.data.userData.userEmail,
+        inputPassword: this.data.userData.userPassword,
+      });
     } else {
       console.log("Inicia sesión primero, loquita.");
       Router.go("/");
