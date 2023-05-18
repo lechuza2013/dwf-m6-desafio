@@ -19,6 +19,11 @@ customElements.define(
         console.log("Objeto: ", objeto);
         state.askRTDBroom(objeto.inputRoomID);
       });
+      const goBackButtonEl = this.shadow.querySelector(".goBack");
+      goBackButtonEl.addEventListener("click", (e) => {
+        console.log("Volviendo a /joingame...");
+        Router.go("/joingame");
+      });
     }
     render() {
       //EL CSS DEL SHADOW
@@ -113,10 +118,6 @@ customElements.define(
       <button class="button goBack">Volver</button>
       `;
       this.shadow.appendChild(style);
-      const goBackButtonEl = this.shadow.querySelector(".goBack");
-      goBackButtonEl.addEventListener("click", (e) => {
-        Router.go("/joingame");
-      });
     }
   }
 );
