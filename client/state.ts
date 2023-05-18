@@ -29,12 +29,8 @@ export const state = {
     const localData = localStorage.getItem("ultraSecretGameData") as string;
     const localDataParseado = JSON.parse(localData);
     if (localDataParseado.userId != "") {
-      window.alert("Iniciando sesión...");
       this.setState(localDataParseado);
-      this.signIn({
-        inputEmail: this.data.userData.userEmail,
-        inputPassword: this.data.userData.userPassword,
-      });
+      Router.go("/menu");
     } else {
       console.log("Inicia sesión primero, loquita.");
       Router.go("/");

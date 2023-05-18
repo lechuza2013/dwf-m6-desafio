@@ -31,6 +31,9 @@ customElements.define(
 
       //CSS
       style.innerHTML = `
+      .goBack{
+        margin: 0 50px;
+      }
       .form-joingame{
         height: 100%;
         width: 100%;
