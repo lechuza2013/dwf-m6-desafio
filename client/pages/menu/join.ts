@@ -31,9 +31,7 @@ customElements.define(
 
       //CSS
       style.innerHTML = `
-      .goBack{
-        margin: 0 50px;
-      }
+      
       .form-joingame{
         height: 100%;
         width: 100%;
@@ -41,9 +39,11 @@ customElements.define(
         display: flex;
         justify-content: space-evenly;
         flex-direction: column;
-        padding: 50px;
         gap: 50px;
         margin-top: 15%;
+      }
+      .main-container{
+         padding: 50px;
        }
        .inputs{
         height: 70px;
@@ -113,12 +113,14 @@ customElements.define(
        `;
       this.shadow.innerHTML = `
       <maintitle-el>Piedra Papel o Tijera</maintitle-el>
+      <div main-container>
       <form class="form-joingame">
             <label for="inputRoomID" class="labels">INGRESA LA ROOM ID</label>
             <input class="inputs input-roomid" type="" name="inputRoomID" minlength="4" maxlength="4" required/>
             <button class="button">Entrar</button>
       </form>
       <button class="button goBack">Volver</button>
+      </div>
       `;
       this.shadow.appendChild(style);
     }

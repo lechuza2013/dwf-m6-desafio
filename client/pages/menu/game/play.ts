@@ -19,9 +19,6 @@ customElements.define(
 
       //CSS
       style.innerHTML = `
-      .goBack{
-        margin: 0 50px;
-      }
       .play-menu{
         display: flex;
         flex-direction: row;
