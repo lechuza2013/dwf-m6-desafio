@@ -113,8 +113,10 @@ customElements.define(
                 </div>
 
                 </div>
-                <button class="button startPlaying">¡Jugar!</button>
-                <button class="button goBack">Volver</button>
+                <div class="button-containers">
+                    <button class="button startPlaying">¡Jugar!</button>
+                    <button class="button goBack">Volver</button>
+                </div>
 
        </div>
            `;
