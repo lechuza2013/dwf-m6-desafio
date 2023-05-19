@@ -35,15 +35,17 @@ customElements.define(
       .form-joingame{
         height: 100%;
         width: 100%;
-        max-width: 80%;
+      
         display: flex;
         justify-content: space-evenly;
         flex-direction: column;
         gap: 50px;
-        margin-top: 15%;
+        
       }
       .main-container{
-         padding: 50px;
+         gap: 15px;
+         display: flex;
+         flex-direction: column;
        }
        .inputs{
         height: 70px;
@@ -113,7 +115,7 @@ customElements.define(
        `;
       this.shadow.innerHTML = `
       <maintitle-el>Piedra Papel o Tijera</maintitle-el>
-      <div main-container>
+      <div class="main-container">
       <form class="form-joingame">
             <label for="inputRoomID" class="labels">INGRESA LA ROOM ID</label>
             <input class="inputs input-roomid" type="" name="inputRoomID" minlength="4" maxlength="4" required/>
