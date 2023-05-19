@@ -19,7 +19,13 @@ customElements.define(
 
       //CSS
       style.innerHTML = `
+      .button-containers{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
       .play-menu{
+        gap: 40px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -84,6 +90,7 @@ customElements.define(
     }
     @media (max-width: 870px){
       .play-menu{
+        gap: 0px;
         flex-direction: column;
         margin-top: 70px;
         min-width: 258px;
