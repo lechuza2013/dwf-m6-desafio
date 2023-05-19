@@ -40,6 +40,13 @@ customElements.define(
           state.data.userData.userName
         );
       });
+      // const gameroomsEl = document.createElement("div");
+      // gameroomsEl.classList.add("gamerooms");
+      const consultGameroomsEl = this.shadow.querySelector(".consult-room");
+      consultGameroomsEl.addEventListener("click", () => {
+        console.log("consultGameRoomsEl clicked");
+        state.consultGamerooms(state.data.userData.userId);
+      });
     }
     render() {
       //EL CSS DEL SHADOW

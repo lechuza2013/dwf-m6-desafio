@@ -254,7 +254,7 @@ export const state = {
         this.data.userData.userId,
       {
         method: "PATCH",
-        headers: { "content-type": "application/json," },
+        headers: { "content-type": "application/json" },
       }
     );
   },
@@ -310,5 +310,20 @@ export const state = {
         headers: { "content-type": "application/json" },
       }
     );
+  },
+  async consultGamerooms(userId) {
+    await fetch(API_BASE_URL + "/getRoomsid", {
+      method: "POST",
+      headers: { "content-type": "application" },
+      body: JSON.stringify({
+        userId: userId,
+      }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log("Data recibida del consultGamerooms: ", data);
+      });
   },
 };
