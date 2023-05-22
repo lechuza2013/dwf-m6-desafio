@@ -68,46 +68,49 @@ customElements.define(
         window.alert(roomsData.message);
       } else {
         console.log("miau");
-        roomsData.forEach((r) => {
-          console.log("r?: ", r);
-
-          // // Players
-          const playerOneNameEl = this.shadow.querySelector(
-            ".playerone__name"
-          ) as HTMLTemplateElement;
-          const playerTwoNameEl = this.shadow.querySelector(
-            ".playertwo__name"
-          ) as HTMLTemplateElement;
-          playerOneNameEl.textContent = r.playerOneName;
-          playerTwoNameEl.textContent = r.playerTwoName;
-          // // Scores
-          const playerOneScoreEl = this.shadow.querySelector(
-            ".playerone__score"
-          ) as HTMLTemplateElement;
-          const playerTwoScoreEl = this.shadow.querySelector(
-            ".playertwo__score"
-          ) as HTMLTemplateElement;
-          playerOneScoreEl.textContent = r.playerOneScore;
-          playerTwoScoreEl.textContent = r.playerTwoScore;
-
-          // // Short Room ID
-          const shortRoomIdEl = this.shadow.querySelector(
-            ".shortRoomID"
-          ) as HTMLTemplateElement;
-          shortRoomIdEl.textContent = r.shortRoomID;
-          const clone = document.importNode(template, true);
-          contenedorEl.appendChild(clone);
-
-          //Elements
-          console.log(
-            "All elements: ",
-            playerOneNameEl,
-            playerTwoNameEl,
-            playerOneScoreEl,
-            playerTwoScoreEl,
-            shortRoomIdEl
-          );
+        Array.prototype.forEach.call(roomsData, (item) => {
+          console.log(item);
         });
+        // roomsData.forEach((r) => {
+        //   console.log("r?: ", r);
+
+        //   // // Players
+        //   const playerOneNameEl = this.shadow.querySelector(
+        //     ".playerone__name"
+        //   ) as HTMLTemplateElement;
+        //   const playerTwoNameEl = this.shadow.querySelector(
+        //     ".playertwo__name"
+        //   ) as HTMLTemplateElement;
+        //   playerOneNameEl.textContent = r.playerOneName;
+        //   playerTwoNameEl.textContent = r.playerTwoName;
+        //   // // Scores
+        //   const playerOneScoreEl = this.shadow.querySelector(
+        //     ".playerone__score"
+        //   ) as HTMLTemplateElement;
+        //   const playerTwoScoreEl = this.shadow.querySelector(
+        //     ".playertwo__score"
+        //   ) as HTMLTemplateElement;
+        //   playerOneScoreEl.textContent = r.playerOneScore;
+        //   playerTwoScoreEl.textContent = r.playerTwoScore;
+
+        //   // // Short Room ID
+        //   const shortRoomIdEl = this.shadow.querySelector(
+        //     ".shortRoomID"
+        //   ) as HTMLTemplateElement;
+        //   shortRoomIdEl.textContent = r.shortRoomID;
+        //   const clone = document.importNode(template, true);
+        //   contenedorEl.appendChild(clone);
+
+        //   //Elements
+        //   console.log(
+        //     "All elements: ",
+        //     playerOneNameEl,
+        //     playerTwoNameEl,
+        //     playerOneScoreEl,
+        //     playerTwoScoreEl,
+        //     shortRoomIdEl
+        //   );
+        // });
       }
 
       // Poner un If por si no creó ninguna room y devolvio un 'message'
