@@ -65,7 +65,7 @@ customElements.define(
       if (roomsData.message) {
         window.alert(roomsData.message);
       } else {
-        for (const r of roomsData) {
+        roomsData.forEach((r) => {
           // Players
           const playerOneNameEl = this.shadow.querySelector(".playerone__name");
           const playerTwoNameEl = this.shadow.querySelector(".playertwo__name");
@@ -84,7 +84,7 @@ customElements.define(
           shortRoomIdEl.textContent = r.shortRoomID;
           const clone = document.importNode(template, true);
           contenedorEl.appendChild(clone);
-        }
+        });
       }
 
       // Poner un If por si no creó ninguna room y devolvio un 'message'
