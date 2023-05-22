@@ -65,23 +65,23 @@ customElements.define(
       if (roomsData.message) {
         window.alert(roomsData.message);
       } else {
-        for (const r of roomsData) {
+        for (let index = 0; index == roomsData.length; index++) {
           // Players
           const playerOneNameEl = this.shadow.querySelector(".playerone__name");
           const playerTwoNameEl = this.shadow.querySelector(".playertwo__name");
-          playerOneNameEl.textContent = r.playerOneName;
-          playerTwoNameEl.textContent = r.playerTwoName;
+          playerOneNameEl.textContent = roomsData[index].playerOneName;
+          playerTwoNameEl.textContent = roomsData[index].playerTwoName;
           // Scores
           const playerOneScoreEl =
             this.shadow.querySelector(".playerone__score");
           const playerTwoScoreEl =
             this.shadow.querySelector(".playertwo__score");
-          playerOneScoreEl.textContent = r.playerOneScore;
-          playerTwoScoreEl.textContent = r.playerTwoScore;
+          playerOneScoreEl.textContent = roomsData[index].playerOneScore;
+          playerTwoScoreEl.textContent = roomsData[index].playerTwoScore;
 
           // Short Room ID
           const shortRoomIdEl = this.shadow.querySelector(".shortRoomID");
-          shortRoomIdEl.textContent = r.shortRoomID;
+          shortRoomIdEl.textContent = roomsData[index].shortRoomID;
           const clone = document.importNode(template, true);
           contenedorEl.appendChild(clone);
         }
