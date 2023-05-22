@@ -68,25 +68,33 @@ customElements.define(
         window.alert(roomsData.message);
       } else {
         console.log("miau");
-        for (const r in roomsData) {
+        roomsData.forEach((r) => {
           console.log("r?: ", r);
 
           // // Players
-          const playerOneNameEl = this.shadow.querySelector(".playerone__name");
-          const playerTwoNameEl = this.shadow.querySelector(".playertwo__name");
-          // playerOneNameEl.textContent = r.playerOneName;
-          // playerTwoNameEl.textContent = r.playerTwoName;
+          const playerOneNameEl = this.shadow.querySelector(
+            ".playerone__name"
+          ) as HTMLTemplateElement;
+          const playerTwoNameEl = this.shadow.querySelector(
+            ".playertwo__name"
+          ) as HTMLTemplateElement;
+          playerOneNameEl.textContent = r.playerOneName;
+          playerTwoNameEl.textContent = r.playerTwoName;
           // // Scores
-          const playerOneScoreEl =
-            this.shadow.querySelector(".playerone__score");
-          const playerTwoScoreEl =
-            this.shadow.querySelector(".playertwo__score");
-          // playerOneScoreEl.textContent = r.playerOneScore;
-          // playerTwoScoreEl.textContent = r.playerTwoScore;
+          const playerOneScoreEl = this.shadow.querySelector(
+            ".playerone__score"
+          ) as HTMLTemplateElement;
+          const playerTwoScoreEl = this.shadow.querySelector(
+            ".playertwo__score"
+          ) as HTMLTemplateElement;
+          playerOneScoreEl.textContent = r.playerOneScore;
+          playerTwoScoreEl.textContent = r.playerTwoScore;
 
           // // Short Room ID
-          const shortRoomIdEl = this.shadow.querySelector(".shortRoomID");
-          // shortRoomIdEl.textContent = roomsData[index].shortRoomID;
+          const shortRoomIdEl = this.shadow.querySelector(
+            ".shortRoomID"
+          ) as HTMLTemplateElement;
+          shortRoomIdEl.textContent = r.shortRoomID;
           const clone = document.importNode(template, true);
           contenedorEl.appendChild(clone);
 
@@ -99,7 +107,7 @@ customElements.define(
             playerTwoScoreEl,
             shortRoomIdEl
           );
-        }
+        });
       }
 
       // Poner un If por si no creó ninguna room y devolvio un 'message'
