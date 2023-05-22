@@ -62,9 +62,12 @@ customElements.define(
       console.log("showGameRooms recibió: ", roomsData);
       const contenedorEl = this.shadow.querySelector(".template__results");
       const template = this.shadow.querySelector(".template__gamerooms");
+      console.log("contenedorEl: ", contenedorEl);
+      console.log("template: ", template);
       if (roomsData.message) {
         window.alert(roomsData.message);
       } else {
+        console.log("miau");
         for (const r in roomsData) {
           console.log("r?: ", r);
 
