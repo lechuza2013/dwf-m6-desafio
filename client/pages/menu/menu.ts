@@ -45,8 +45,42 @@ customElements.define(
       const consultGameroomsEl = this.shadow.querySelector(".consult-room");
       consultGameroomsEl.addEventListener("click", () => {
         console.log("consultGameRoomsEl clicked");
-        state.consultGamerooms(state.data.userData.userId);
+
+        state.consultGamerooms(state.data.userData.userId).then((data) => {
+          this.showGameRooms(data);
+        });
       });
+    }
+    showGameRooms(roomsData) {
+      console.log("showGameRooms recibió: ", roomsData);
+      const contenedorEl = this.shadow.querySelector(".template__results");
+      const template = this.shadow.querySelector(".template__gamerooms");
+      if (roomsData.message) {
+        window.alert(roomsData.message);
+      } else {
+        for (const r of roomsData) {
+          // Players
+          const playerOneNameEl = this.shadow.querySelector(".playerone__name");
+          const playerTwoNameEl = this.shadow.querySelector(".playertwo__name");
+          playerOneNameEl.textContent = r.playerOneName;
+          playerTwoNameEl.textContent = r.playerTwoName;
+          // Scores
+          const playerOneScoreEl =
+            this.shadow.querySelector(".playerone__score");
+          const playerTwoScoreEl =
+            this.shadow.querySelector(".playertwo__score");
+          playerOneScoreEl.textContent = r.playerOneScore;
+          playerTwoScoreEl.textContent = r.playerTwoScore;
+
+          // Short Room ID
+          const shortRoomIdEl = this.shadow.querySelector(".shortRoomID");
+          shortRoomIdEl.textContent = r.shortRoomID;
+          const clone = document.importNode(template, true);
+          contenedorEl.appendChild(clone);
+        }
+      }
+
+      // Poner un If por si no creó ninguna room y devolvio un 'message'
     }
     render() {
       //EL CSS DEL SHADOW
@@ -94,6 +128,27 @@ customElements.define(
       </div>
       <button class="button consult-room">Gamerooms Creadas</button>
 
+      <div class="template__results"></div>
+
+      <template class="template__gamerooms">
+      <div class="button__container"> <button class="closeButton">X</button></div>
+          <div class="gameroom__container">
+
+            <div class="gameroom__container-contrincants">
+              <h3 class="h3 playerone__name">Jugador 1</h3>
+              <span class="score playerone__score">0</span>
+
+              <span class="h3">VS</span>
+
+              <span class="score playertwo__score">0</span>
+              <h3 class="h3 playertwo__name">Jugador 2</h3>
+
+            </div>
+            <div class="shortRoomID">
+                <h2>12345</h2>
+            </div>
+          </div>
+      </template>
       `;
       this.shadow.appendChild(style);
     }

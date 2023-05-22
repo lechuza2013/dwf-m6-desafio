@@ -2,3 +2,4 @@ node_modules
 .parcel-cache
 dist
 yarn.lock
+key.json

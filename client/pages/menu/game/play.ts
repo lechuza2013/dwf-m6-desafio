@@ -35,8 +35,8 @@ customElements.define(
         min-height: 20vh;
         padding: 25px;
         align-self: center;
-        background: #099951;
-        border: 10px solid #04502a;
+        background: #006CFC;
+        border: 10px solid #001997;
         border-radius: 10px;
     
         font-family: "Odibee Sans";

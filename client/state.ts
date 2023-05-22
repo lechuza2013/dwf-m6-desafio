@@ -312,18 +312,16 @@ export const state = {
     );
   },
   async consultGamerooms(userId) {
-    await fetch(API_BASE_URL + "/getRoomsid", {
-      method: "POST",
+    await fetch(API_BASE_URL + "/getRoomsid/" + userId, {
+      method: "GET",
       headers: { "content-type": "application" },
-      body: JSON.stringify({
-        userId: userId,
-      }),
     })
       .then((res) => {
         return res.json();
       })
       .then((data) => {
         console.log("Data recibida del consultGamerooms: ", data);
+        return data;
       });
   },
 };
