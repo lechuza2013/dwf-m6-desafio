@@ -84,6 +84,16 @@ customElements.define(
           shortRoomIdEl.textContent = roomsData[index].shortRoomID;
           const clone = document.importNode(template, true);
           contenedorEl.appendChild(clone);
+
+          //Elements
+          console.log(
+            "All elements: ",
+            playerOneNameEl,
+            playerTwoNameEl,
+            playerOneScoreEl,
+            playerTwoScoreEl,
+            shortRoomIdEl
+          );
         }
       }
 
