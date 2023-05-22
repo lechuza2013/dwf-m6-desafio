@@ -1,6 +1,5 @@
 import { Router } from "@vaadin/router"; // el goTo
-import { state } from "../../state";
-
+import { state, API_BASE_URL } from "../../state";
 import "../../components/main-title";
 
 customElements.define(
@@ -40,15 +39,23 @@ customElements.define(
           state.data.userData.userName
         );
       });
-      // const gameroomsEl = document.createElement("div");
-      // gameroomsEl.classList.add("gamerooms");
+
       const consultGameroomsEl = this.shadow.querySelector(".consult-room");
+      //El fetch lo puse acá por temas prácticos
       consultGameroomsEl.addEventListener("click", () => {
         console.log("consultGameRoomsEl clicked");
 
-        state.consultGamerooms(state.data.userData.userId).then((data) => {
-          this.showGameRooms(data);
-        });
+        fetch(API_BASE_URL + "/getRoomsid/" + state.data.userData.userId, {
+          method: "GET",
+          headers: { "content-type": "application" },
+        })
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            console.log("Data recibida: ", data);
+            this.showGameRooms(data);
+          });
       });
     }
     showGameRooms(roomsData) {

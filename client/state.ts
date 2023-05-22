@@ -6,7 +6,8 @@ interactuar con localStorage/API
 import { Router } from "@vaadin/router";
 import { database, onValue, ref, get } from "./db";
 
-const API_BASE_URL = process.env.PORT || "https://dwf-m6-back.onrender.com";
+export const API_BASE_URL =
+  process.env.PORT || "https://dwf-m6-back.onrender.com";
 const FRONT_URL = "https://piedrapapelotijerazo.onrender.com";
 // const FRONT_URL = "http://localhost:1234";
 type Jugada = "piedra" | "papel" | "tijeras";
@@ -311,17 +312,5 @@ export const state = {
       }
     );
   },
-  async consultGamerooms(userId) {
-    await fetch(API_BASE_URL + "/getRoomsid/" + userId, {
-      method: "GET",
-      headers: { "content-type": "application" },
-    })
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log("Data recibida del consultGamerooms: ", data);
-        return data;
-      });
-  },
+  async consultGamerooms(userId) {},
 };
