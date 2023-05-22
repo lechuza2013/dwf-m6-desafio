@@ -58,14 +58,14 @@ customElements.define(
           });
       });
     }
-    showGameRooms(roomsData) {
+    showGameRooms(roomsData: any) {
       console.log("showGameRooms recibió: ", roomsData);
       const contenedorEl = this.shadow.querySelector(".template__results");
       const template = this.shadow.querySelector(".template__gamerooms");
       if (roomsData.message) {
         window.alert(roomsData.message);
       } else {
-        roomsData.forEach((r) => {
+        for (const r of roomsData) {
           // Players
           const playerOneNameEl = this.shadow.querySelector(".playerone__name");
           const playerTwoNameEl = this.shadow.querySelector(".playertwo__name");
@@ -84,7 +84,7 @@ customElements.define(
           shortRoomIdEl.textContent = r.shortRoomID;
           const clone = document.importNode(template, true);
           contenedorEl.appendChild(clone);
-        });
+        }
       }
 
       // Poner un If por si no creó ninguna room y devolvio un 'message'
