@@ -6,10 +6,9 @@ interactuar con localStorage/API
 import { Router } from "@vaadin/router";
 import { database, onValue, ref, get } from "./db";
 
-export const API_BASE_URL =
-  process.env.PORT || "https://dwf-m6-back.onrender.com";
-const FRONT_URL = "https://piedrapapelotijerazo.onrender.com";
-// const FRONT_URL = "http://localhost:1234";
+export const API_BASE_URL = process.env.PORT || "http://localhost:5000";
+// const FRONT_URL = "https://piedrapapelotijerazo.onrender.com";
+const FRONT_URL = "http://localhost:1234";
 type Jugada = "piedra" | "papel" | "tijeras";
 
 export const state = {

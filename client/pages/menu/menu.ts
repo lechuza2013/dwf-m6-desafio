@@ -59,58 +59,75 @@ customElements.define(
       });
     }
     showGameRooms(roomsData: any) {
-      console.log("showGameRooms recibió: ", roomsData);
-      const contenedorEl = this.shadow.querySelector(".template__results");
-      const template = this.shadow.querySelector(".template__gamerooms");
+      const exitCloseGamerooms = this.shadow.querySelector(
+        ".closeButton"
+      ) as HTMLElement;
+      exitCloseGamerooms.style.display = "initial";
+      const contenedorEl = this.shadow.querySelector(
+        ".template__container"
+      ) as HTMLElement;
+      const contenedorDosEl = this.shadow.querySelector(
+        ".template__results"
+      ) as HTMLElement;
+      contenedorDosEl.style.display = "initial";
+      contenedorEl.style.display = "flex";
+      const template = this.shadow.querySelector(
+        ".template__gamerooms"
+      ) as HTMLTemplateElement;
+
+      exitCloseGamerooms.addEventListener("click", () => {
+        contenedorEl.innerHTML = "";
+        contenedorEl.style.display = "none";
+        contenedorDosEl.style.display = "none";
+      });
+
       console.log("contenedorEl: ", contenedorEl);
       console.log("template: ", template);
+      // Players Element
+      const playerOneNameEl =
+        template.content.querySelector(".playerone__name");
+      const playerTwoNameEl =
+        template.content.querySelector(".playertwo__name");
+      // Scores Elements
+      const playerOneScoreEl =
+        template.content.querySelector(".playerone__score");
+      const playerTwoScoreEl =
+        template.content.querySelector(".playertwo__score");
+
+      // Short Room ID
+      const shortRoomIdEl = template.content.querySelector(
+        ".shortRoomID__id"
+      ) as HTMLElement;
+
+      //Elements
+      console.log(
+        "All elements: ",
+        playerOneNameEl,
+        playerTwoNameEl,
+        playerOneScoreEl,
+        playerTwoScoreEl,
+        shortRoomIdEl
+      );
       if (roomsData.message) {
         window.alert(roomsData.message);
       } else {
         console.log("miau");
-        Array.prototype.forEach.call(roomsData, (item) => {
-          console.log(item);
+
+        Object.keys(roomsData).forEach(function (key) {
+          // Players
+          console.log(key, roomsData[key].shortRoomID);
+          playerOneNameEl.textContent = roomsData[key].playerOneName;
+          playerTwoNameEl.textContent = roomsData[key].playerTwoName;
+
+          // Scores
+          playerOneScoreEl.textContent = roomsData[key].playerOneScore;
+          playerTwoScoreEl.textContent = roomsData[key].playerTwoScore;
+
+          // Short Room ID
+          shortRoomIdEl.textContent = roomsData[key].shortRoomID;
+          const clone = document.importNode(template.content, true);
+          contenedorEl.appendChild(clone);
         });
-        // roomsData.forEach((r) => {
-        //   console.log("r?: ", r);
-
-        //   // // Players
-        //   const playerOneNameEl = this.shadow.querySelector(
-        //     ".playerone__name"
-        //   ) as HTMLTemplateElement;
-        //   const playerTwoNameEl = this.shadow.querySelector(
-        //     ".playertwo__name"
-        //   ) as HTMLTemplateElement;
-        //   playerOneNameEl.textContent = r.playerOneName;
-        //   playerTwoNameEl.textContent = r.playerTwoName;
-        //   // // Scores
-        //   const playerOneScoreEl = this.shadow.querySelector(
-        //     ".playerone__score"
-        //   ) as HTMLTemplateElement;
-        //   const playerTwoScoreEl = this.shadow.querySelector(
-        //     ".playertwo__score"
-        //   ) as HTMLTemplateElement;
-        //   playerOneScoreEl.textContent = r.playerOneScore;
-        //   playerTwoScoreEl.textContent = r.playerTwoScore;
-
-        //   // // Short Room ID
-        //   const shortRoomIdEl = this.shadow.querySelector(
-        //     ".shortRoomID"
-        //   ) as HTMLTemplateElement;
-        //   shortRoomIdEl.textContent = r.shortRoomID;
-        //   const clone = document.importNode(template, true);
-        //   contenedorEl.appendChild(clone);
-
-        //   //Elements
-        //   console.log(
-        //     "All elements: ",
-        //     playerOneNameEl,
-        //     playerTwoNameEl,
-        //     playerOneScoreEl,
-        //     playerTwoScoreEl,
-        //     shortRoomIdEl
-        //   );
-        // });
       }
 
       // Poner un If por si no creó ninguna room y devolvio un 'message'
@@ -151,6 +168,107 @@ customElements.define(
        .consult-room{
         margin-top: 50px;
        }
+
+       .template__results{ 
+        display: none;
+        width: 82vw;
+        flex-direction: column;
+        height: 86vh;
+        top: 50px;
+        
+        left: 0;
+        right: 0;
+        position: absolute;
+        background: #006CFC;
+        border: 10px solid #001997;
+        border-radius: 10px;
+
+        margin: auto;
+        
+       }
+    .button__container{
+        display: flex;
+        justify-content: flex-end;
+       }
+    .closeButton{ 
+      display: none;
+      width: 50px;
+      height: 50px;
+      align-self: center;
+      background: #006CFC;
+      border: 3px solid #001997;
+      border-radius: 10px;
+      cursor: pointer;
+    
+      font-family: "Odibee Sans";
+      font-size: 30px;
+      font-weight: initial;
+      line-height: normal;
+      letter-spacing: 0.05em;
+      text-align: center;
+      color: white;
+    }
+    .shortRoomID{
+      display: flex;
+      justify-content: center;
+      
+      border-bottom: dotted;
+      border-color: white;
+      border-width: thick;
+
+    }
+    .shortRoomID__id{
+      font-family: "Lobster", cursive;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 48px;
+        letter-spacing: 0.1em;
+        text-align: center;
+        color: white;
+        
+        padding: 10px;
+    }
+    .template__container{
+      overflow: auto;
+      display: none;
+      height: 80vh;
+      flex-direction: column;
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+    .h3{  
+        margin: 0;
+        height: 80px;
+        font-family: "Odibee Sans";
+        font-size: 45px;
+        font-weight: 400;
+        line-height: 50px;
+        letter-spacing: 0.05em;
+        text-align: center;
+        color: white;
+    }
+    .gameroom__container-contrincants{
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 15px;
+    }
+    .score{
+      margin: 0;
+      height: 80px;
+      font-family: "Odibee Sans";
+      font-size: 45px;
+      font-weight: 400;
+      line-height: 50px;
+      letter-spacing: 0.05em;
+      text-align: center;
+      color: white;
+    }
+    .span {
+      font-size: 30px;
+      color: red;
+    }
        `;
       this.shadow.innerHTML = `
       <maintitle-el>Piedra Papel o Tijera</maintitle-el>
@@ -161,29 +279,34 @@ customElements.define(
       </div>
       <button class="button consult-room">Gamerooms Creadas</button>
 
-      <div class="template__results"></div>
+      <div class="template__results">
+        <div class="button__container">
+            <button class="closeButton">X</button>
+        </div>
+        <div class="template__container">
+      </div> 
+        <template class="template__gamerooms">
+              <div class="gameroom__container-contrincants">
+                <h3 class="h3 playerone__name">Jugador 1</h3>
+                <span class="score playerone__score">0</span>
 
-      <template class="template__gamerooms">
-      <div class="button__container"> <button class="closeButton">X</button></div>
-          <div class="gameroom__container">
+                <span class="h3 span">VS</span>
 
-            <div class="gameroom__container-contrincants">
-              <h3 class="h3 playerone__name">Jugador 1</h3>
-              <span class="score playerone__score">0</span>
+                <span class="score playertwo__score">0</span>
+                <h3 class="h3 playertwo__name">Jugador 2</h3>
 
-              <span class="h3">VS</span>
-
-              <span class="score playertwo__score">0</span>
-              <h3 class="h3 playertwo__name">Jugador 2</h3>
-
-            </div>
-            <div class="shortRoomID">
-                <h2>12345</h2>
-            </div>
-          </div>
-      </template>
+              </div>
+              <div class="shortRoomID">
+                  <h2 class="shortRoomID__id">12345</h2>
+              </div>
+        </template>
       `;
       this.shadow.appendChild(style);
     }
   }
 );
+
+// ARREGLAR QUE SE SUMAN DEVUELTA LOS TEMPLATES AL SALIR Y ENTRAR
+// COPIAR SHORTROOMID AL CLICKEARLO.
+// POSTMAN DOCUMENTACION
+// ENTREGAR
