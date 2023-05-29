@@ -199,6 +199,7 @@ customElements.define(
         var contrincantPlay: string;
         var localPlayerPlay: string;
         var cg = state.getCurrentGame();
+
         state.data.currentGame;
         //Se elimina el timer de 3 segundos
         timerEl.remove();
@@ -234,6 +235,12 @@ customElements.define(
                   <button class="button">Continuar</button>
                   `;
         } else {
+          console.log(
+            "LocalPlayerPlay: ",
+            localPlayerPlay,
+            " contrincantPlayerPlay: ",
+            contrincantPlay
+          );
           var resultado = state.whoWins(localPlayerPlay, contrincantPlay);
           if (resultado == true) {
             resultEl.style.background = "rgba(136, 137, 73, 0.8)";
