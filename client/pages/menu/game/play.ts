@@ -1,5 +1,6 @@
 import { Router } from "@vaadin/router";
 import { state } from "../../../state";
+import { off } from "firebase/database";
 
 //COMPONENTS IMPORTAODS
 customElements.define(
@@ -149,7 +150,7 @@ customElements.define(
       const goBackButtonEl = this.shadow.querySelector(".goBack");
       goBackButtonEl.addEventListener("click", (e) => {
         state.restartRound();
-        state.connectToGameroom(state.data.userData.longRoomId);
+        state.connectToGameroom(state.data.userData.longRoomId, "disconnect");
         Router.go("/joingame");
       });
     }

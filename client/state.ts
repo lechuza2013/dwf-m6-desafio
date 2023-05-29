@@ -209,8 +209,11 @@ export const state = {
         Router.go("/newgame");
       });
   },
-  async connectToGameroom(roomLongId) {
+  async connectToGameroom(roomLongId, disconnect?) {
     const roomRef = ref(database, "/rooms/" + roomLongId);
+    if (disconnect) {
+      off(roomRef);
+    }
     onValue(roomRef, (snap) => {
       const data = snap.val();
 
