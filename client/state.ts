@@ -213,38 +213,39 @@ export const state = {
     const roomRef = ref(database, "/rooms/" + roomLongId);
     if (disconnect) {
       off(roomRef);
-    }
-    onValue(roomRef, (snap) => {
-      const data = snap.val();
+    } else {
+      onValue(roomRef, (snap) => {
+        const data = snap.val();
 
-      console.log(data);
-      this.data.currentGame = data.currentGame;
-      if (window.location.href == FRONT_URL + "/joingame") {
-        Router.go("/play");
-      }
-      //Si ambos estan online (Ingresaron a la sala)
-      if (
-        data.currentGame[Object.keys(data.currentGame)[0]].online == true &&
-        data.currentGame[Object.keys(data.currentGame)[1]].online == true
-      ) {
-        if (window.location.href == FRONT_URL + "/newgame") {
-          this.data.currentGame = data.currentGame;
+        console.log(data);
+        this.data.currentGame = data.currentGame;
+        if (window.location.href == FRONT_URL + "/joingame") {
           Router.go("/play");
         }
-      } else {
-        window.alert("Esperando a que el contrincante se conecte");
-      }
-      if (
-        data.currentGame[Object.keys(data.currentGame)[0]].start == true &&
-        data.currentGame[Object.keys(data.currentGame)[1]].start == true
-      ) {
-        if (window.location.href == FRONT_URL + "/play") {
-          this.data.currentGame = data.currentGame;
-          Router.go("/duel");
+        //Si ambos estan online (Ingresaron a la sala)
+        if (
+          data.currentGame[Object.keys(data.currentGame)[0]].online == true &&
+          data.currentGame[Object.keys(data.currentGame)[1]].online == true
+        ) {
+          if (window.location.href == FRONT_URL + "/newgame") {
+            this.data.currentGame = data.currentGame;
+            Router.go("/play");
+          }
+        } else {
+          window.alert("Esperando a que el contrincante se conecte");
         }
-        // state.restartRound();
-      }
-    });
+        if (
+          data.currentGame[Object.keys(data.currentGame)[0]].start == true &&
+          data.currentGame[Object.keys(data.currentGame)[1]].start == true
+        ) {
+          if (window.location.href == FRONT_URL + "/play") {
+            this.data.currentGame = data.currentGame;
+            Router.go("/duel");
+          }
+          // state.restartRound();
+        }
+      });
+    }
   },
   async checkPlayersReady(roomLongId) {
     //Recibe roomLongId, escucha con onValue la Room, y detecta cuando los dos le den start,
@@ -309,10 +310,5 @@ export const state = {
         headers: { "content-type": "application/json" },
       }
     );
-  },
-  async disconnectToGameroom() {
-    console.log("DisconnectToGameroom");
-    const roomRef = ref(database, "/rooms/" + this.data.userData.roomLongId);
-    off(roomRef);
   },
 };
