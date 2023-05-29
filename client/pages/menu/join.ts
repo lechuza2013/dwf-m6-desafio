@@ -21,8 +21,7 @@ customElements.define(
       });
       const goBackButtonEl = this.shadow.querySelector(".goBack");
       goBackButtonEl.addEventListener("click", (e) => {
-        console.log("Volviendo a /menu...");
-        Router.go("/menu");
+        state.reloadPage();
       });
     }
     render() {

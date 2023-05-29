@@ -32,7 +32,7 @@ export const state = {
       this.setState(localDataParseado);
       Router.go("/menu");
     } else {
-      console.log("Inicia sesión primero, loquita.");
+      console.log("Inicia sesión primero.");
       Router.go("/");
     }
   },
@@ -300,15 +300,15 @@ export const state = {
   async restartRound() {
     console.log("restartRound!");
     await fetch(
-      API_BASE_URL +
-        "/gameRoom/" +
-        this.data.userData.longRoomId +
-        "/restart/" +
-        this.data.userData.userId,
+      API_BASE_URL + "/gameRoom/" + this.data.userData.longRoomId + "/restart",
       {
         method: "PATCH",
         headers: { "content-type": "application/json" },
       }
     );
+  },
+  reloadPage() {
+    Router.go(FRONT_URL);
+    location.reload();
   },
 };

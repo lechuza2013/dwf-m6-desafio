@@ -148,7 +148,7 @@ customElements.define(
       });
       const goBackButtonEl = this.shadow.querySelector(".goBack");
       goBackButtonEl.addEventListener("click", (e) => {
-        Router.go("/joingame");
+        state.reloadPage();
       });
     }
   }
