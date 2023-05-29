@@ -239,6 +239,7 @@ export const state = {
           data.currentGame[Object.keys(data.currentGame)[1]].start == true
         ) {
           if (window.location.href == FRONT_URL + "/play") {
+            console.log("starting duel!...", data);
             this.data.currentGame = data.currentGame;
             Router.go("/duel");
           }
