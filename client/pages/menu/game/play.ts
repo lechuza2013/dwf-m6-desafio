@@ -149,7 +149,7 @@ customElements.define(
       const goBackButtonEl = this.shadow.querySelector(".goBack");
       goBackButtonEl.addEventListener("click", (e) => {
         state.restartRound();
-        state.disconnectToGameroom();
+        state.connectToGameroom(state.data.userData.longRoomId);
         Router.go("/joingame");
       });
     }
