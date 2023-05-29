@@ -303,13 +303,13 @@ export const state = {
     });
   },
   async restartRound() {
-    console.log("restartRound!");
     await fetch(
-      API_BASE_URL + "/gameRoom/" + this.data.userData.longRoomId + "/restart",
+      API_BASE_URL + "/gameRoom/" + this.data.userData.longRoomId + "/restart/",
       {
         method: "PATCH",
         headers: { "content-type": "application/json" },
       }
     );
+    console.log("restartRound!");
   },
 };
