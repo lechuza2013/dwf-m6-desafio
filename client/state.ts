@@ -279,11 +279,11 @@ export const state = {
       localPlayerPlay == "piedra" && contrincantPlay == "tijeras";
 
     const victory = [ganaPapel, ganaPiedra, ganaTijeras].includes(true);
+    console.log("Victory?: ", victory);
 
     if (localPlayerPlay == contrincantPlay) {
       return "Empate";
     } else {
-      this.addVictory();
       return victory;
     }
   },

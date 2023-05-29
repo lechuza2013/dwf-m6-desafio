@@ -243,6 +243,7 @@ customElements.define(
           );
           var resultado = state.whoWins(localPlayerPlay, contrincantPlay);
           if (resultado == true) {
+            state.addVictory();
             resultEl.style.background = "rgba(136, 137, 73, 0.8)";
             resultEl.innerHTML = `
                               <img src="${resultsImages.ganaste}"/>
