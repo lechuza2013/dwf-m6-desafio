@@ -308,7 +308,6 @@ export const state = {
     );
   },
   async disconnectToGameroom() {
-    var location: Location = "https://piedrapapelotijerazo.onrender.com" as any;
     location.reload();
   },
 };

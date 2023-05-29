@@ -149,6 +149,7 @@ customElements.define(
       const goBackButtonEl = this.shadow.querySelector(".goBack");
       goBackButtonEl.addEventListener("click", (e) => {
         state.restartRound();
+        Router.go("/");
         state.disconnectToGameroom();
       });
     }
