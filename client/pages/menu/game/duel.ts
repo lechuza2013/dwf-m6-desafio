@@ -264,8 +264,8 @@ customElements.define(
         var continueButtonEl = this.shadow.querySelector(".button");
         console.log(cg);
 
+        state.restartRound();
         continueButtonEl.addEventListener("click", () => {
-          state.restartRound();
           resultEl.remove();
           Router.go("/play");
         });
