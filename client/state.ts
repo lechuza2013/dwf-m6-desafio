@@ -308,6 +308,7 @@ export const state = {
     );
   },
   async disconnectToGameroom() {
-    location.reload();
+    const roomRef = ref(database, "/rooms/" + this.data.userData.roomLongId);
+    off(roomRef);
   },
 };
