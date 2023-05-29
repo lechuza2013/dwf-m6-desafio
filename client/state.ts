@@ -311,5 +311,4 @@ export const state = {
       }
     );
   },
-  async consultGamerooms(userId) {},
 };
