@@ -307,8 +307,4 @@ export const state = {
       }
     );
   },
-  reloadPage() {
-    Router.go(FRONT_URL);
-    location.reload();
-  },
 };
