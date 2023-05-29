@@ -4,7 +4,7 @@ guardar en localStorage(lo necesario)
 interactuar con localStorage/API
 */
 import { Router } from "@vaadin/router";
-import { database, onValue, ref, get } from "./db";
+import { database, onValue, ref, get, off } from "./db";
 
 export const API_BASE_URL = process.env.PORT || "http://localhost:5000";
 const FRONT_URL = "https://piedrapapelotijerazo.onrender.com";
@@ -306,5 +306,9 @@ export const state = {
         headers: { "content-type": "application/json" },
       }
     );
+  },
+  async disconnectToGameroom() {
+    var location: Location = "https://piedrapapelotijerazo.onrender.com" as any;
+    location.reload();
   },
 };

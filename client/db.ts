@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, onValue, ref, get } from "firebase/database";
+import { getDatabase, onValue, ref, get, off } from "firebase/database";
 
 // import * as keyData from "../key.json";
 
@@ -11,4 +11,4 @@ const app = initializeApp({
 });
 const database = getDatabase(app);
 
-export { database, onValue, ref, get };
+export { database, onValue, ref, get, off };
