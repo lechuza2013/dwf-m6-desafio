@@ -280,7 +280,7 @@ customElements.define(
           papelHand.style.display = "none";
           tijeraHand.style.display = "none";
         });
-      }, 3200);
+      }, 4000);
     }
   }
 );
