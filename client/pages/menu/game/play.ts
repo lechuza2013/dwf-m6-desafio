@@ -26,9 +26,14 @@ customElements.define(
         gap: 30px;
       }
       .play-menu{
-        gap: 40px;
+        gap: 0px;
+        flex-direction: column;
+        margin-top: 70px;
+        min-width: 55vw;
+
+       
         display: flex;
-        flex-direction: row;
+        
         justify-content: space-between;
         box-sizing: border-box;
 
@@ -62,6 +67,7 @@ customElements.define(
     .span-versus{
         align-self: center;
         font-size: 6rem;
+        margin: 20px auto;
     }
     .h2{
         margin: 30px auto 5px auto;
@@ -149,9 +155,8 @@ customElements.define(
       });
       const goBackButtonEl = this.shadow.querySelector(".goBack");
       goBackButtonEl.addEventListener("click", (e) => {
-        state.restartRound();
+        state.restartRoundAndGoTo("/joingame");
         state.connectToGameroom(state.data.userData.longRoomId, "disconnect");
-        Router.go("/joingame");
       });
     }
   }

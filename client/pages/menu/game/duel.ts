@@ -24,7 +24,7 @@ customElements.define(
       const resultsImages = {
         perdiste: require("url:../../../components/images/perdiste.png"),
         ganaste: require("url:../../../components/images/ganaste.png"),
-        empate0: require("url:../../../components/images/empate.png"),
+        empate: require("url:../../../components/images/empate.png"),
       };
       //CSS
       style.innerHTML = `
@@ -119,6 +119,7 @@ customElements.define(
   }
    .final__results > img{
     width: 88vw;
+    max-width: 400px;
     height: 44vh;
    }
   .button{
@@ -164,7 +165,7 @@ customElements.define(
         //Se elimina el event listener de los otros
         piedraHand.removeEventListener("click", piedraFunction);
         (tijeraHand as HTMLElement).style.opacity = "0.5";
-        tijeraHand.removeEventListener("click", piedraFunction);
+        tijeraHand.removeEventListener("click", tijeraFunction);
       };
       var piedraFunction = () => {
         state.sendChoice("piedra");
@@ -172,9 +173,9 @@ customElements.define(
         (piedraHand as HTMLElement).style.opacity = "1";
         //Se elimina el event listener de los otros
         (papelHand as HTMLElement).style.opacity = "0.5";
-        papelHand.removeEventListener("click", piedraFunction);
+        papelHand.removeEventListener("click", papelFunction);
         (tijeraHand as HTMLElement).style.opacity = "0.5";
-        tijeraHand.removeEventListener("click", piedraFunction);
+        tijeraHand.removeEventListener("click", tijeraFunction);
       };
       var tijeraFunction = () => {
         state.sendChoice("tijeras");
@@ -183,7 +184,7 @@ customElements.define(
         (piedraHand as HTMLElement).style.opacity = "0.5";
         piedraHand.removeEventListener("click", piedraFunction);
         (papelHand as HTMLElement).style.opacity = "0.5";
-        papelHand.removeEventListener("click", piedraFunction);
+        papelHand.removeEventListener("click", papelFunction);
       };
 
       // EVENT LISTENERS.
@@ -223,14 +224,14 @@ customElements.define(
         resultEl.classList.add("final__results");
 
         if (contrincantPlay == "" || localPlayerPlay == "") {
-          piedraHand.removeEventListener("click", piedraFunction);
-          papelHand.removeEventListener("click", piedraFunction);
-          tijeraHand.removeEventListener("click", piedraFunction);
+          // piedraHand.removeEventListener("click", piedraFunction);
+          // papelHand.removeEventListener("click", piedraFunction);
+          // tijeraHand.removeEventListener("click", piedraFunction);
 
           console.log("VOS: ", localPlayerPlay, "EL: ", contrincantPlay);
           resultEl.style.background = "rgba(42, 40, 40, 0.8)";
           resultEl.innerHTML = `
-                  <img src="${resultsImages.empate0}"/>
+                  <img src="${resultsImages.empate}"/>
                   <maintitle-el>Alguien no eligió</maintitle-el>
                   <button class="button">Continuar</button>
                   `;
@@ -260,7 +261,7 @@ customElements.define(
           } else if (resultado == "Empate") {
             resultEl.style.background = "rgba(42, 40, 40, 0.8)";
             resultEl.innerHTML = `
-                              <img src="${resultsImages.empate0}">
+                              <img src="${resultsImages.empate}">
                               <maintitle-el>Empate</maintitle-el>
                               <button class="button">Continuar</button>
                               `;
@@ -268,14 +269,16 @@ customElements.define(
           }
         }
         this.shadow.appendChild(resultEl);
-        console.log("Me ejecute? WTF");
+
         var continueButtonEl = this.shadow.querySelector(".button");
         console.log(cg);
 
         continueButtonEl.addEventListener("click", () => {
-          state.restartRound();
+          state.restartRoundAndGoTo("/play");
           resultEl.remove();
-          Router.go("/play");
+          piedraHand.style.display = "none";
+          papelHand.style.display = "none";
+          tijeraHand.style.display = "none";
         });
       }, 3200);
     }

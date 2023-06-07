@@ -170,6 +170,11 @@ export const state = {
       }
     )
       .then((res) => {
+        if (res.ok == false) {
+          window.alert(
+            "Algo ocurrió, vuelve a intentarlo o reinicia la página"
+          );
+        }
         return res.json();
       })
       .then((data) => {
@@ -215,7 +220,7 @@ export const state = {
       off(roomRef);
     } else {
       onValue(roomRef, (snap) => {
-        const data = snap.val();
+        let data = snap.val();
 
         console.log(data);
         this.data.currentGame = data.currentGame;
@@ -235,8 +240,11 @@ export const state = {
           window.alert("Esperando a que el contrincante se conecte");
         }
         if (
+          // Si ambos están online y le dieron a Jugar, que jueguen
           data.currentGame[Object.keys(data.currentGame)[0]].start == true &&
-          data.currentGame[Object.keys(data.currentGame)[1]].start == true
+          data.currentGame[Object.keys(data.currentGame)[1]].start == true &&
+          data.currentGame[Object.keys(data.currentGame)[0]].online == true &&
+          data.currentGame[Object.keys(data.currentGame)[1]].online == true
         ) {
           if (window.location.href == FRONT_URL + "/play") {
             console.log("starting duel!...", data);
@@ -250,7 +258,7 @@ export const state = {
   },
   async checkPlayersReady(roomLongId) {
     //Recibe roomLongId, escucha con onValue la Room, y detecta cuando los dos le den start,
-    // Cuando los dos le den ¡Jugar!, setea el 'start' en true, y el online en 'false'
+    // Cuando los dos le den ¡Jugar!, setea el 'start' & 'online' en true,
     await fetch(
       API_BASE_URL +
         "/gameRoom/" +
@@ -261,7 +269,13 @@ export const state = {
         method: "PATCH",
         headers: { "content-type": "application/json" },
       }
-    );
+    )
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log("checkPlayersReady: ", data.message);
+      });
   },
   async sendChoice(choice: Jugada) {
     console.log("sendChoice recibió: ", choice);
@@ -302,14 +316,38 @@ export const state = {
       }),
     });
   },
-  async restartRound() {
+  async restartRoundAndGoTo(goTo: string) {
+    console.log("goTo: ", goTo);
     await fetch(
-      API_BASE_URL + "/gameRoom/" + this.data.userData.longRoomId + "/restart/",
+      API_BASE_URL +
+        "/restart/" +
+        this.data.userData.longRoomId +
+        "/" +
+        this.data.userData.userId,
+      {
+        method: "PATCH",
+        headers: { "content-type": "application/json" },
+      }
+    )
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data.message, "y yendo a ", goTo);
+        Router.go(goTo);
+      });
+  },
+  async setStartFalse() {
+    await fetch(
+      API_BASE_URL +
+        "/startfalse/" +
+        this.data.userData.longRoomId +
+        "/" +
+        this.data.userData.userId,
       {
         method: "PATCH",
         headers: { "content-type": "application/json" },
       }
     );
-    console.log("restartRound!");
   },
 };
